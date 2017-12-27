@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Friend Finder</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel='stylesheet' type='text/css' href='css/style.css'>
+
+  
+</head>
+<body>
+
+
+	<div class='surveyContainer'>
+		<div class='interestContainer'>
+			<div id="interestGrid"></div>
+		</div>
+		<button id='next'><span class='glyphicon glyphicon-chevron-right'></span></button>
+		<div id="surveyContainer">
+			<form id="bioForm" action='/submit-survey' method='POST'>
+				<input type="text" name="bio" placeholder="bio">
+				<input type="text" name="college" placeholder="college">
+				<input type="text" name="work" placeholder="work">
+				<input type="text" name="age" placeholder="age">
+				<div id='genderContainer'>
+					<div id='genderFloat'>
+						<ul>
+							<li>
+								<input type="radio" id="genderChoice1"
+								       name="sex" value="male">
+								<label for="genderChoice1">Male</label>
+							</li>
+							<li>
+								<input type="radio" id="genderChoice2"
+								       name="sex" value="female">
+								<label for="genderChoice2">Female</label>
+							</li>
+						</ul>
+					</div>
+					<div id='genderFloat'>
+						<ul>
+							<li>
+								<input type="radio" id="lookingChoice1"
+								       name="looking" value="male">
+								<label for="lookingChoice1">Male</label>
+							</li>
+							<li>
+								<input type="radio" id="lookingChoice2"
+								       name="looking" value="female">
+								<label for="lookingChoice2">Female</label>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<button id='bioSubmit' type='submit'>submit</button>
+			</form>
+			<!--<form id='imageForm' action='/submit-image' method='POST'>-->
+				<!--<input type="text" name="imgUrl" placeholder="img url...">-->
+				<!--<button type='submit'>submit</button>-->
+			<!--</form>-->
+		</div>
+		<div id='imgSubmit'>
+			<div id="drop_zone" ondrop="drop(event);" ondragover="dragover(event);" ondragend="dragend(event);">
+				<strong>Drag one or more files to this Drop Zone ...</strong>
+			</div>
+		</div>
+	</div>
+
+	<script type='text/javascript' src='js/drop.js'></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+	<script type='text/javascript' src='js/survey.js'></script>
+
+</body>
+</html>

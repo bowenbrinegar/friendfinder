@@ -1,0 +1,408 @@
+/*login container*/
+
+.loginContainer {
+	position: absolute;
+	margin: auto;
+	height: 300px;
+	width: 300px;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: rgba(0,0,0,.5);
+	border-radius: 10px;
+    overflow: hidden;
+}
+
+#buttonContainer {
+    width: 100%;
+    height: 50px;
+}
+
+#buttonContainer > div {
+    float: left;
+    width: 50%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+}
+
+#loginButton {
+    background: rgba(0,0,0,.3);
+}
+
+#formContainer {
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    width: 100%;
+    padding-top: 8px;
+    background: rgba(0,0,0,.5);
+}
+
+
+.form-group > input {
+    float: left;
+    width: 80%;
+    margin: 10px 20px;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.btnLR {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    background: rgb(73, 194, 247);
+    border: none;
+    font-size: 15px;
+}
+
+.hover {
+    -webkit-box-shadow: inset 0px -12px 12px -12px rgba(0,0,0,0.6);
+    -moz-box-shadow: inset 0px -12px 12px -12px rgba(0,0,0,0.6);
+    box-shadow: inset 0px -12px 12px -12px rgba(0,0,0,0.6);
+}
+
+
+/*survey elements*/
+
+.surveyContainer {
+	position: absolute;
+	margin: auto;
+	height: 400px;
+	width: 600px;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: rgba(0,0,0,.5);
+	border-radius: 10px;
+}
+
+
+.interestContainer {
+	position: absolute;
+    display: none;
+	-webkit-transform: translate(-50%, -50%);
+	top: 50%;
+	left: 51%;
+	height: 360px;
+	width: 450px;
+	overflow: scroll;
+}
+
+
+.interest-item {
+  width: 22%;
+  height: 80px;
+  color: white;
+  margin: 5px 0px;
+  border-radius: 5px;
+  display: inline-block;  
+}
+
+.interest-item span{
+  position: absolute;
+  left: 10%;
+  bottom: 5%;
+  z-index: 40;
+  font-size: 15px;
+}
+
+.check {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background: rgba(0,0,0,.75);
+}
+
+.check span {
+  position: absolute;
+  font-size: 40px;
+  top: 5%;
+}
+
+#surveyContainer {
+    display: none;
+}
+
+#next {
+    display: none;
+    position: absolute;
+    bottom: 6%;
+    right: 7%;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+
+#bioForm {
+	position: absolute;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+    padding-top: 50px;
+	top: 50%;
+	left: 50%;
+	width: 80%;
+    height: 100%;
+}
+
+#bioForm > input {
+	clear: both;
+	float: left;
+	margin: 10px 0px;
+	width: 100%;
+	padding: 5px;
+	border-radius: 10px;
+	border: none;
+	text-align: center;
+}
+
+#genderContainer {
+    margin: 0px 0px 0px -40px;
+    width: 100%;
+    padding-top: 20px;
+    height: 50px;
+    clear: both;
+}
+
+#genderFloat {
+    float: left;
+    height: 50px;
+    margin: 0px -10px
+}
+
+
+
+input[type='radio'] {
+    visibility: hidden;
+}
+
+ul {
+    list-style: none;
+}
+
+ul > li {
+    float: left;
+    margin: -5px;
+}
+
+label {
+    width: 70px;
+    height: 50px;
+    background: rgb(73, 194, 247);
+    text-align: center;
+    line-height: 3.3;
+
+
+}
+
+label:hover {
+    background: rgb(247, 116, 39);
+}
+
+input[type='radio']:checked + label {
+    color: white;
+    background: rgb(247, 116, 39);
+    height: 60px;
+    line-height: 4;
+}
+
+#bioSubmit {
+    display: none;
+    position: absolute;
+    bottom: 20%;
+    right: 0;
+    border: none;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+}
+
+#bioSubmit:hover {
+    background: rgb(73, 194, 247);
+    color: white;
+}
+
+/*#bioForm > select {*/
+	/*margin: 15px 10px 0px 10px;*/
+	/*width: 217px;*/
+	/*height: 20px;*/
+/*}*/
+
+#imageForm {
+    display: none;
+}
+
+#imageSubmit {
+    width: 400px;
+    height: 200px;
+}
+
+#drop_zone {
+    width: 300px;
+    height: 150px;
+    background: rgba(255,255,255,.5);
+    border: 5px solid blue
+}
+
+/*spacer, row 1 colomn 12*/
+
+#spacerTop {
+	height: 40px;
+}
+
+/*user info, row 2 colomn 12*/
+.mainContainer {
+	position: absolute;
+	margin: auto;
+	height: 500px;
+	width: 700px;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: rgba(0,0,0,.2);
+}
+
+
+/*profile container*/
+
+.profileContainer {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 3%;
+	background: rgba(0,0,0,.2);
+}
+
+#profilePhoto {
+	position: relative;
+	width: 100%;
+	height: 210px;
+	background: rgba(0,0,0,.5);
+}
+
+.profileBox {
+	display: none
+}
+
+.circle {
+	height: 140px;
+	width: 140px;
+	border-radius: 50%;
+}
+
+#profilePhoto img {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+}
+
+
+/*selectContainer*/
+
+.selectContainer {
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 3%;
+	width: 97%;
+	background: rgba(0,0,0,.2);
+}
+
+/*viewContainer*/
+
+.viewContainer {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	height: 300px;
+	width: 400px;
+	-webkit-transform: translate(-50%, -50%);
+}
+
+.profileOnView {
+	position: absolute;
+	left: 35%;
+	top: 50%;
+	height: 250px;
+	width: 250px;
+	-webkit-transform: translate(-50%, -50%);
+	border-radius: 50%;
+	display: inline-block;
+	background: rgba(0,0,0,.5);
+	overflow:hidden;
+}
+
+.profileOnView > img {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	border-radius: 50%;
+	height: 100%;
+	width: 110%;
+	display: inline-block;
+}
+
+.userChoiceButtons {
+	position: absolute;
+	right: 5%;
+	top: 50%;
+	height: 200px;
+	width: 100px;
+	-webkit-transform: translate(0%, -50%);
+}
+
+.userChoiceButtons div {
+	position: relative;
+	float: left;
+	left: 50%;
+	top: -5%;
+	height: 90px;
+	width: 90px;
+	margin: 10px 0px 10px 0px;
+	border-radius: 50%;
+	-webkit-transform: translate(-50%, 0%);
+	background: rgba(0,0,0,.5);
+}
+.userChoiceButtons div span {
+	color: white;
+	position: absolute;
+	font-size: 40px;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+}
+
+
+
+/*viewFocusDetails*/
+
+.viewFocusDetails {
+	position: absolute;
+	display: none;
+	right: 5%;
+	top: 5%;
+	height: 450px;
+	width: 425px;
+	background: rgba(0,0,0,.3);
+}
+
+
+
+
+

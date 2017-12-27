@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
 	var Images = sequelize.define('Images', {
-		img: {
+		path: {
 			type: DataTypes.TEXT
 		}
 	});

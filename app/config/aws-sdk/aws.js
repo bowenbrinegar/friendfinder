@@ -1,7 +1,7 @@
-var AWS = require('aws-sdk')
+var AWS = require('aws-sdk');
 
 AWS.config.update({accessKeyId: 'AKID', secretAccessKey: 'SECRET'});
-AWS.config.loadFromPath('./credentials.json');
+AWS.config.loadFromPath('./config/credentials.json');
 
 module.exports = function() {
 	var s3 = new AWS.S3();

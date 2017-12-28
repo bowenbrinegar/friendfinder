@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d963e75-7341-4bd5-b27e-1c0aacccca0c" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/config/aws-sdk/aws.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/config/s3.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/public/js/imageRender.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/models/images.js" afterPath="$PROJECT_DIR$/app/models/images.js" />
-      <change beforePath="$PROJECT_DIR$/app/public/js/drop.js" afterPath="$PROJECT_DIR$/app/public/js/drop.js" />
-      <change beforePath="$PROJECT_DIR$/app/public/js/survey.js" afterPath="$PROJECT_DIR$/app/public/js/survey.js" />
-      <change beforePath="$PROJECT_DIR$/app/public/survey.html" afterPath="$PROJECT_DIR$/app/public/survey.html" />
-      <change beforePath="$PROJECT_DIR$/app/routing/apiRoutes.js" afterPath="$PROJECT_DIR$/app/routing/apiRoutes.js" />
+      <change beforePath="$PROJECT_DIR$/app/config/aws-sdk/aws.js" afterPath="$PROJECT_DIR$/app/config/aws-sdk/aws.js" />
+      <change beforePath="$PROJECT_DIR$/app/config/aws-sdk/credentials.json" afterPath="$PROJECT_DIR$/app/config/aws-sdk/config/credentials.json" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,58 +24,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="121">
               <caret line="59" column="3" lean-forward="false" selection-start-line="59" selection-start-column="3" selection-end-line="59" selection-end-column="3" />
-              <folding>
-                <marker date="1514070265000" expanded="true" signature="82:2463" ph="{...}" />
-                <marker date="1514070265000" expanded="true" signature="208:237" ph="{...}" />
-                <marker date="1514070265000" expanded="true" signature="287:449" ph="{...}" />
-                <marker date="1514070265000" expanded="true" signature="333:444" ph="{...}" />
-                <marker date="1514070265000" expanded="true" signature="351:391" ph="{...}" />
-                <marker date="1514070265000" expanded="true" signature="397:438" ph="{...}" />
-                <marker date="1514070265000" expanded="true" signature="506:606" ph="{&quot;usernameField&quot;: 'email'...}" />
-                <marker date="1514070265000" expanded="true" signature="651:1458" ph="{...}" />
-                <marker date="1514070265000" expanded="true" signature="698:777" ph="{...}" />
-                <marker date="1514070265000" expanded="true" signature="798:857" ph="{...}" />
-                <marker date="1514070265000" expanded="true" signature="815:849" ph="{&quot;email&quot;: email...}" />
-                <marker date="1514070265000" expanded="true" signature="880:1451" ph="{...}" />
-                <marker date="1514070265000" expanded="true" signature="900:996" ph="{...}" />
-                <marker date="1514070265000" expanded="true" signature="937:985" ph="{&quot;message&quot;: 'Email Taken'...}" />
-                <marker date="1514070265000" expanded="true" signature="1002:1443" ph="{...}" />
-                <marker date="1514070265000" expanded="true" signature="1077:1193" ph="{&quot;name&quot;: req.body.name...}" />
-                <marker date="1514070265000" expanded="true" signature="1256:1432" ph="{...}" />
-                <marker date="1514070265000" expanded="true" signature="1284:1338" ph="{...}" />
-                <marker date="1514070265000" expanded="true" signature="1364:1420" ph="{...}" />
-                <marker date="1514070265000" expanded="true" signature="1520:1620" ph="{&quot;usernameField&quot;: 'email'...}" />
-                <marker date="1514070265000" expanded="true" signature="1665:2456" ph="{...}" />
-                <marker date="1514070265000" expanded="true" signature="1748:1811" ph="{...}" />
-                <marker date="1514070265000" expanded="true" signature="1831:1890" ph="{...}" />
-                <marker date="1514070265000" expanded="true" signature="1848:1882" ph="{&quot;email&quot;: email...}" />
-                <marker date="1514070265000" expanded="true" signature="1913:2277" ph="{...}" />
-                <marker date="1514070265000" expanded="true" signature="1934:2039" ph="{...}" />
-                <marker date="1514070265000" expanded="true" signature="1971:2028" ph="{&quot;message&quot;: 'Email does not exist'...}" />
-                <marker date="1514070265000" expanded="true" signature="2095:2199" ph="{...}" />
-                <marker date="1514070265000" expanded="true" signature="2132:2188" ph="{&quot;message&quot;: 'Incorrect password.'...}" />
-                <marker date="1514070265000" expanded="true" signature="2300:2449" ph="{...}" />
-                <marker date="1514070265000" expanded="true" signature="2370:2440" ph="{&quot;message&quot;: 'Something went wrong with your Signin'...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="drop.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/public/js/drop.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="48" column="2" lean-forward="false" selection-start-line="48" selection-start-column="2" selection-end-line="48" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="apiRoutes.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/routing/apiRoutes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="20" lean-forward="true" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -93,35 +33,48 @@
         <entry file="file://$PROJECT_DIR$/app/config/aws-sdk/aws.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="57">
-              <caret line="3" column="26" lean-forward="false" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+              <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="credentials.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/config/aws-sdk/credentials.json">
+        <entry file="file://$PROJECT_DIR$/app/config/aws-sdk/config/credentials.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="57">
+              <caret line="3" column="2" lean-forward="false" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="images.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/images.js">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" column="11" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-              <folding>
-                <marker date="1514406319000" expanded="true" signature="48:279" ph="{...}" />
-                <marker date="1514406319000" expanded="true" signature="91:133" ph="{...}" />
-                <marker date="1514406319000" expanded="true" signature="101:130" ph="{&quot;type&quot;: DataTypes.TEXT...}" />
-                <marker date="1514406319000" expanded="true" signature="167:261" ph="{...}" />
-                <marker date="1514406319000" expanded="true" signature="209:257" ph="{...}" />
-                <marker date="1514406319000" expanded="true" signature="226:253" ph="{...}" />
-              </folding>
+            <state relative-caret-position="533">
+              <caret line="35" column="23" lean-forward="true" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -186,11 +139,12 @@
         <option value="$PROJECT_DIR$/app/models/images.js" />
         <option value="$PROJECT_DIR$/app/public/js/imageRender.js" />
         <option value="$PROJECT_DIR$/app/public/survey.html" />
-        <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/app/config/aws.js" />
         <option value="$PROJECT_DIR$/app/public/js/drop.js" />
         <option value="$PROJECT_DIR$/app/routing/apiRoutes.js" />
+        <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/app/config/aws-sdk/aws.js" />
+        <option value="$PROJECT_DIR$/app/config/aws-sdk/config/credentials.json" />
       </list>
     </option>
   </component>
@@ -257,6 +211,14 @@
               <item name="friendfinder" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="aws-sdk" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="friendfinder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="friendfinder" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
               <item name="passport" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -316,7 +278,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/config/aws-sdk/config" />
       <recent name="$PROJECT_DIR$/app/config/aws-sdk" />
+      <recent name="$PROJECT_DIR$/app/config" />
       <recent name="$PROJECT_DIR$/app/config/passport" />
     </key>
   </component>
@@ -383,26 +347,27 @@
       <workItem from="1514131437406" duration="4929000" />
       <workItem from="1514237897446" duration="10503000" />
       <workItem from="1514393818268" duration="7000" />
-      <workItem from="1514393861054" duration="9988000" />
+      <workItem from="1514393861054" duration="11340000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54716000" />
+    <option name="totallyTimeSpent" value="56068000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="28" y="24" width="1358" height="844" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25773194" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25773194" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32953104" sideWeight="0.50639385" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.06210393" sideWeight="0.49360615" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32233503" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.06210393" sideWeight="0.49360615" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32142857" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18527919" sideWeight="0.71270245" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18518518" sideWeight="0.71270245" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26108998" sideWeight="0.7860187" order="3" side_tool="false" content_ui="tabs" x="2813" y="136" width="485" height="716" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -535,25 +500,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="36" lean-forward="true" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/public/js/animate.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1235">
           <caret line="65" column="12" lean-forward="false" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="35" column="28" lean-forward="false" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -584,13 +534,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/profiles.js" />
-    <entry file="file://$PROJECT_DIR$/app/models/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/dislikes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -700,69 +643,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/passport/passport.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="59" column="3" lean-forward="false" selection-start-line="59" selection-start-column="3" selection-end-line="59" selection-end-column="3" />
-          <folding>
-            <marker date="1514070265000" expanded="true" signature="82:2463" ph="{...}" />
-            <marker date="1514070265000" expanded="true" signature="208:237" ph="{...}" />
-            <marker date="1514070265000" expanded="true" signature="287:449" ph="{...}" />
-            <marker date="1514070265000" expanded="true" signature="333:444" ph="{...}" />
-            <marker date="1514070265000" expanded="true" signature="351:391" ph="{...}" />
-            <marker date="1514070265000" expanded="true" signature="397:438" ph="{...}" />
-            <marker date="1514070265000" expanded="true" signature="506:606" ph="{&quot;usernameField&quot;: 'email'...}" />
-            <marker date="1514070265000" expanded="true" signature="651:1458" ph="{...}" />
-            <marker date="1514070265000" expanded="true" signature="698:777" ph="{...}" />
-            <marker date="1514070265000" expanded="true" signature="798:857" ph="{...}" />
-            <marker date="1514070265000" expanded="true" signature="815:849" ph="{&quot;email&quot;: email...}" />
-            <marker date="1514070265000" expanded="true" signature="880:1451" ph="{...}" />
-            <marker date="1514070265000" expanded="true" signature="900:996" ph="{...}" />
-            <marker date="1514070265000" expanded="true" signature="937:985" ph="{&quot;message&quot;: 'Email Taken'...}" />
-            <marker date="1514070265000" expanded="true" signature="1002:1443" ph="{...}" />
-            <marker date="1514070265000" expanded="true" signature="1077:1193" ph="{&quot;name&quot;: req.body.name...}" />
-            <marker date="1514070265000" expanded="true" signature="1256:1432" ph="{...}" />
-            <marker date="1514070265000" expanded="true" signature="1284:1338" ph="{...}" />
-            <marker date="1514070265000" expanded="true" signature="1364:1420" ph="{...}" />
-            <marker date="1514070265000" expanded="true" signature="1520:1620" ph="{&quot;usernameField&quot;: 'email'...}" />
-            <marker date="1514070265000" expanded="true" signature="1665:2456" ph="{...}" />
-            <marker date="1514070265000" expanded="true" signature="1748:1811" ph="{...}" />
-            <marker date="1514070265000" expanded="true" signature="1831:1890" ph="{...}" />
-            <marker date="1514070265000" expanded="true" signature="1848:1882" ph="{&quot;email&quot;: email...}" />
-            <marker date="1514070265000" expanded="true" signature="1913:2277" ph="{...}" />
-            <marker date="1514070265000" expanded="true" signature="1934:2039" ph="{...}" />
-            <marker date="1514070265000" expanded="true" signature="1971:2028" ph="{&quot;message&quot;: 'Email does not exist'...}" />
-            <marker date="1514070265000" expanded="true" signature="2095:2199" ph="{...}" />
-            <marker date="1514070265000" expanded="true" signature="2132:2188" ph="{&quot;message&quot;: 'Incorrect password.'...}" />
-            <marker date="1514070265000" expanded="true" signature="2300:2449" ph="{...}" />
-            <marker date="1514070265000" expanded="true" signature="2370:2440" ph="{&quot;message&quot;: 'Something went wrong with your Signin'...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/images.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="11" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-          <folding>
-            <marker date="1514406319000" expanded="true" signature="48:279" ph="{...}" />
-            <marker date="1514406319000" expanded="true" signature="91:133" ph="{...}" />
-            <marker date="1514406319000" expanded="true" signature="101:130" ph="{&quot;type&quot;: DataTypes.TEXT...}" />
-            <marker date="1514406319000" expanded="true" signature="167:261" ph="{...}" />
-            <marker date="1514406319000" expanded="true" signature="209:257" ph="{...}" />
-            <marker date="1514406319000" expanded="true" signature="226:253" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/s3.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -771,10 +651,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/js/drop.js">
+    <entry file="file://$PROJECT_DIR$/app/models/images.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="48" column="2" lean-forward="false" selection-start-line="48" selection-start-column="2" selection-end-line="48" selection-end-column="2" />
+        <state relative-caret-position="57">
+          <caret line="3" column="11" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="36" lean-forward="true" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -787,18 +675,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/aws-sdk/aws.js">
+    <entry file="file://$PROJECT_DIR$/app/public/js/drop.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="26" lean-forward="false" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+        <state relative-caret-position="391">
+          <caret line="48" column="2" lean-forward="false" selection-start-line="48" selection-start-column="2" selection-end-line="48" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/aws-sdk/credentials.json">
+    <entry file="file://$PROJECT_DIR$/app/config/passport/passport.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="121">
+          <caret line="59" column="3" lean-forward="false" selection-start-line="59" selection-start-column="3" selection-end-line="59" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="533">
+          <caret line="35" column="23" lean-forward="true" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/aws-sdk/aws.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/aws-sdk/config/credentials.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="2" lean-forward="false" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="23" />
           <folding />
         </state>
       </provider>

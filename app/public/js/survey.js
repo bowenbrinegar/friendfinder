@@ -150,7 +150,9 @@ $(document).ready(function () {
 		submitShow();
 	})
 
-
+  $('#bioSubmit').on('click', function() {
+  	$('#imgSubmit').show()
+  })
 
 
 })

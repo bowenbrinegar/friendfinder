@@ -87,7 +87,7 @@
 
 .interestContainer {
 	position: absolute;
-    display: none;
+    /*display: none;*/
 	-webkit-transform: translate(-50%, -50%);
 	top: 50%;
 	left: 51%;
@@ -240,20 +240,47 @@ input[type='radio']:checked + label {
 	/*height: 20px;*/
 /*}*/
 
-#imageForm {
+
+#imgSubmit {
     display: none;
+    padding-top: 20px;
+    width: 600px;
+    height: 400px;
+    background: rgba(255,255,255,.3);
 }
 
-#imageSubmit {
-    width: 400px;
+#drop_zone, #addImg {
+    width: 280px;
     height: 200px;
+    float: left;
+    margin: 10px;
 }
+
 
 #drop_zone {
-    width: 300px;
-    height: 150px;
     background: rgba(255,255,255,.5);
-    border: 5px solid blue
+    border: 5px solid blue;
+}
+
+#addImg {
+    background: rgba(255,255,255,.5);
+}
+
+.imgAd {
+    height: 60px;
+    width: 60px;
+    float: left;
+    margin: 10px;
+}
+
+#toPortal {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
 }
 
 /*spacer, row 1 colomn 12*/
@@ -321,6 +348,17 @@ input[type='radio']:checked + label {
 	height: 3%;
 	width: 97%;
 	background: rgba(0,0,0,.2);
+    padding: 0px 10px
+}
+
+.imgQueqe {
+    display: none;
+    border-radius: 50%;
+    border: 2px solid black;
+    height: 80px;
+    width: 80px;
+    margin: 10px;
+    float: right;
 }
 
 /*viewContainer*/

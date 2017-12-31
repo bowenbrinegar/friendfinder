@@ -33,6 +33,7 @@ $(document).ready(function () {
         1000, function () {
           selectTurn = !selectTurn
         })
+	    $(this).children().show(1000)
       $('.viewContainer').animate({'top': '60%'}, 1000, null)
       return
     }
@@ -41,6 +42,7 @@ $(document).ready(function () {
       1000, function () {
         selectTurn = !selectTurn
       })
+	  $(this).children().hide(1000)
     $('.viewContainer').animate({'top': '50%'}, 1000, null)
   })
 

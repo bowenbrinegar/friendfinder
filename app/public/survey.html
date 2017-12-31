@@ -8,15 +8,9 @@
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<link rel='stylesheet' type='text/css' href='css/style.css'>
 
-	<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.175.0.min.js"></script>
-	<script
-			src="https://code.jquery.com/jquery-3.2.1.min.js"
-			integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-			crossorigin="anonymous"></script>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-
 </head>
 <body>
 
@@ -64,22 +58,19 @@
 				</div>
 				<button id='bioSubmit' type='submit'>submit</button>
 			</form>
-			<!--<form id='imageForm' action='/submit-image' method='POST'>-->
-				<!--<input type="text" name="imgUrl" placeholder="img url...">-->
-				<!--<button type='submit'>submit</button>-->
-			<!--</form>-->
 		</div>
 		<div id='imgSubmit'>
-			<div id="drop_zone" ondrop="drop(event);" ondragover="dragover(event);" ondragend="dragend(event);">
+			<div id="drop_zone" name='fileDropped' ondrop="drop(event);" ondragover="dragover(event);" ondragend="dragend(event);">
 				<strong>Drag one or more files to this Drop Zone ...</strong>
 			</div>
+			<div id='addImg'></div>
+			<button id='toPortal'>To Portal</button>
 		</div>
-		<img src='https://s3.amazonaws.com/friendfinder192837465/51IwA%2BrT1YL._SX258_BO1%2C204%2C203%2C200_.jpg'>
 	</div>
 
-
-	<script type='text/javascript' src='js/imageRender.js'></script>
 	<script type='text/javascript' src='js/drop.js'></script>
+
+	<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 	<script type='text/javascript' src='js/survey.js'></script>
 
 

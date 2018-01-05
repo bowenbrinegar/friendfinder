@@ -321,16 +321,6 @@ input[type='radio']:checked + label {
 	background: rgba(0,0,0,.5);
 }
 
-.profileBox {
-	display: none
-}
-
-.circle {
-	height: 140px;
-	width: 140px;
-	border-radius: 50%;
-}
-
 #profilePhoto img {
 	position: absolute;
 	left: 50%;
@@ -338,6 +328,147 @@ input[type='radio']:checked + label {
 	-webkit-transform: translate(-50%, -50%);
 }
 
+.profileBox {
+    display: none
+}
+
+.circle {
+    height: 170px;
+    width: 170px;
+    border-radius: 50%;
+}
+
+#profileStats {
+    display: none;
+    margin: 10px auto 0 auto;
+    padding: 10px;
+    color: rgba(0,0,0,1);
+    background: floralwhite;
+    height: 225px;
+    width: 190px;
+    overflow: scroll;
+}
+
+#editor {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    width: 100%
+}
+
+#editor div {
+    float: left;
+    width: 50%;
+    color: white;
+    text-align: center;
+    height: 45px;
+    line-height: 43px;
+    font-size: 18px;
+}
+
+#editor div:hover {
+    background: coral;
+}
+#goMatches {
+    background: fuchsia;
+}
+
+#goProfile {
+    background: darkblue;
+}
+
+#profileView {
+    display: none;
+    position: absolute;
+    background: rgba(0,0,0,.9);
+    width: 70%;
+    height: 100%;
+    right: 0;
+}
+
+#bioBox {
+    background: floralwhite;
+    position: absolute;
+    left: 0;
+    margin: 10px 0 0 10px;
+    padding: 5px 0 8px 0px;
+
+    width: 255px;
+    height: 50%;
+    overflow: scroll;
+}
+
+#bioBox::-webkit-scrollbar {
+    display: none;
+}
+
+#bioBox > h4 {
+    background: rgba(0,0,0,.9);
+    height: 20px;
+    width: 225px;
+    padding: 20px;
+    padding-bottom: 40px;
+    color: white;
+    float: left;
+    margin: 10px 15px;
+}
+
+#imgBox {
+    background: floralwhite;
+    position: absolute;
+    right: 0;
+    margin: 10px 0 0 0;
+    padding: 5px 0 8px 0px;
+    width: 210px;
+    height: 50%;
+    border-radius: 5px 0 0 5px;
+    overflow: scroll;
+}
+
+#imgsContain {
+    width: 95%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    margin: 10px 0 10px 20px;
+    overflow: scroll;
+}
+.imgBoxImg {
+    float: left;
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    margin: 0 15px 0 0;
+}
+
+#matchesView {
+    display: none;
+    position: absolute;
+    background: rgba(0,0,0,.9);
+    width: 70%;
+    height: 100%;
+    right: 0;
+}
+
+#matchContainer {
+    position: absolute;
+    margin: auto;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    height: 90%;
+    width: 90%;
+    overflow: scroll;
+}
+.matchImg {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    margin: 10px;
+    border: 5px solid floralwhite;
+    float: left;
+}
 
 /*selectContainer*/
 
@@ -348,7 +479,27 @@ input[type='radio']:checked + label {
 	height: 3%;
 	width: 97%;
 	background: rgba(0,0,0,.2);
-    padding: 0px 10px
+    padding: 0px 10px;
+	overflow: scroll;
+    direction: rtl;
+}
+
+.selectContainer::-webkit-scrollbar {
+    display: none;
+}
+
+#queqeC {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    max-width: 130%;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+#queqe {
+	position: relative;
+	height: 100%;
 }
 
 .imgQueqe {
@@ -382,7 +533,6 @@ input[type='radio']:checked + label {
 	border-radius: 50%;
 	display: inline-block;
 	background: rgba(0,0,0,.5);
-	overflow:hidden;
 }
 
 .profileOnView > img {
@@ -392,8 +542,9 @@ input[type='radio']:checked + label {
 	-webkit-transform: translate(-50%, -50%);
 	border-radius: 50%;
 	height: 100%;
-	width: 110%;
+	width: 100%;
 	display: inline-block;
+    border: 4px solid black;
 }
 
 .userChoiceButtons {

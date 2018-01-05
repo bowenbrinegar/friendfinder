@@ -11,6 +11,7 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
 	        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 	        crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
 	        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
 	        crossorigin="anonymous"></script>
@@ -23,35 +24,62 @@
 
 </head>
 <body>
-
 	<div class='mainContainer'>
 		<div class='profileContainer'>
 			<div id='profilePhoto'>
 				<div class='profileBox'>
 					<img class='circle'
 					     src='https://cdn.vectorstock.com/i/thumb-large/13/04/male-profile-picture-vector-2041304.jpg'>
-					<div id='profileStats'></div>
-					<div id='editor'></div>
 				</div>
 			</div>
+			<div id='profileStats'><p></p></div>
+			<div id='editor'>
+				<div id='goMatches'>Matches</div>
+				<div id='goProfile'>Profile</div>
+			</div>
 		</div>
-		<div class='selectContainer'></div>
+		<div class='selectContainer'>
+            <div id='queqeC'>
+                <div id='queqe'></div>
+            </div>
+        </div>
 		<div class='viewContainer'>
 			<div class='box'>
 				<div class='profileOnView'>
 					<img src='https://img1.etsystatic.com/000/0/5800341/il_570xN.307710965.jpg'>
 				</div>
 				<div class='userChoiceButtons'>
-					<div><span class='glyphicon glyphicon-ok'></span></div>
-					<div><span class='glyphicon glyphicon-remove'></span></div>
+					<div id='like'><span class='glyphicon glyphicon-ok'></span></div>
+					<div id='dislike'><span class='glyphicon glyphicon-remove'></span></div>
 				</div>
 			</div>
 		</div>
 		<div class='viewFocusDetails'></div>
+		<div id='profileView'>
+            <div id='bioBox'></div>
+			<div id='imgBox'>
+				<div id='imgsContain'></div>
+			</div>
+        </div>
+        <div id='matchesView'>
+			<div id='matchContainer'></div>
+		</div>
 	</div>
 
-	<script type='text/javascript' src='js/animate.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js'></script>
+
+    <script type='text/javascript' src='js/animate.js'></script>
+	<script type='text/javascript' src='js/loadProfile.js'></script>
+	<script type='text/javascript' src='js/loadMatches.js'></script>
 	<script type='text/javascript' src='js/queqe.js'></script>
 
+
+    <script id="bio-template" type="text/x-handlebars-template">
+		<h4><strong>School: </strong> {{college}}</h4>
+		<h4><strong>Work: </strong> {{work}}</h4>
+		<h4><strong>Age: </strong> {{age}}</h4>
+		<h4><strong>Gender: </strong> {{sex}}</h4>
+		<h4><strong>Looking for: </strong> {{lookingFor}}</h4>
+    </script>
 </body>
 </html>

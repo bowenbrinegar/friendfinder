@@ -17,7 +17,7 @@ $(document).ready(function () {
 		return arr[Math.floor(Math.random() * arr.length)]
 	}
 
-  function renderToolBox () {
+  ! function renderToolBox () {
     let arr = ['Sports', 'Television', 'Exercise', 'Running',
       'Tennis', 'Bicycling', 'Swimming', 'Skiing', 'Golf',
       'Music', 'Traveling', 'Fishing', 'Hunting', 'Community Work', 'Church', 'Religion',
@@ -31,9 +31,7 @@ $(document).ready(function () {
       $grid.append(box)
       $grid.masonry('appended', box)
     }
-  }
-
-  renderToolBox()
+  }()
 
   $('.interest-item').on('click', function () {
     if ($(this).children().eq(1).css('display') == 'block') {
@@ -104,42 +102,42 @@ $(document).ready(function () {
   })
 
 	function inputChecker() {
-		let checker = true;
-		$('#bioForm > input').each(function () {
-			if ($(this).val() == '') {
-				checker = false
-			};
-		})
-		return checker
+      let checker = true;
+      $('#bioForm > input').each(function () {
+          if ($(this).val() == '') {
+              checker = false
+          };
+      })
+      return checker
 	}
 
 	function radioChecker() {
-		let total = false;
-  	let checker1 = false;
-		$("[name='looking']").each(function() {
-			if ($(this).prop('checked')) {
-				checker1 = true
-			}
-		});
-		let checker2 = false;
-		$("[name='sex']").each(function()  {
-			if ($(this).prop('checked')) {
-				checker2 = true;
-			}
+      let total = false;
+      let checker1 = false;
+      $("[name='looking']").each(function() {
+          if ($(this).prop('checked')) {
+              checker1 = true
+          }
+      });
+      let checker2 = false;
+      $("[name='sex']").each(function()  {
+          if ($(this).prop('checked')) {
+              checker2 = true;
+          }
 
-		});
-		if (checker1 & checker2) {
-			total = true
-		}
-		return total
+      });
+      if (checker1 & checker2) {
+          total = true
+      }
+      return total
 	}
 
 	function submitShow() {
-		if (radioChecker() && inputChecker())  {
-			$('#bioSubmit').show()
-		} else {
-			$('#bioSubmit').hide()
-		}
+      if (radioChecker() && inputChecker())  {
+          $('#bioSubmit').show()
+      } else {
+          $('#bioSubmit').hide()
+      }
 	}
 
   $('#surveyContainer').on("keyup", function () {
@@ -156,8 +154,3 @@ $(document).ready(function () {
 
 
 })
-
-// $('#imageForm').on('submit', function(evt) {
-//
-//
-// })

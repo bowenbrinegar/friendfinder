@@ -2,9 +2,12 @@
 module.exports = function (sequelize, DataTypes) {
   var Likes = sequelize.define('Likes', {
 	likeId: {
-	  type: DataTypes.INTEGER,
-	  allowNull: false
-	}
+	  type: DataTypes.INTEGER
+	},
+	status: {
+	  type: DataTypes.ENUM,
+      values: ['like', 'dislike']
+    }
   });
 
   Likes.associate = models => {

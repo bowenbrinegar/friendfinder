@@ -1,24 +1,24 @@
-var drop = function (evt) {
+const drop = function (evt) {
   console.log('drop')
   evt.preventDefault()
   let dt = evt.dataTransfer
-  var file = dt.items[0].getAsFile()
-  var formData = new FormData()
+  let file = dt.items[ 0 ].getAsFile()
+  let formData = new FormData()
   formData.append('myFile', file, file.name)
   console.log(formData)
   imageUpload(formData)
 }
 
-var dragover = function (evt) {
+const dragover = function (evt) {
   console.log('dragOver')
   evt.preventDefault()
 }
 
-var dragend = function (evt) {
+const dragend = function (evt) {
   console.log('dragEnd')
-  var dt = evt.dataTransfer
+  const dt = evt.dataTransfer
   if (dt.items) {
-    for (var i = 0; i < dt.items.length; i++) {
+    for (let i = 0; i < dt.items.length; i++) {
       dt.items.remove(i)
     }
   } else {
@@ -45,36 +45,34 @@ function fetchPath () {
     url: '/get-path'
   }).done(data => {
     getAWS(data, function (response) {
-	    let html = `<img class='imgAd' src=${response}>`
-	    $('#addImg').prepend(html)
-	    submitChecker();
-    });
+      let html = `<img class='imgAd' src=${response}>`
+      $('#addImg').prepend(html)
+      submitChecker()
+    })
   })
 }
 
 function getAWS (data, callback) {
-	$('#addImg').empty();
-  for (var i = 0; i < data.length; i++) {
+  $('#addImg').empty()
+  for (let i = 0; i < data.length; i++) {
     let temp = {path: data[i].path}
     $.ajax({
       type: 'POST',
       url: '/get-aws',
       data: temp,
-	    success: callback
+      success: callback
     })
   }
 }
 
-
-function submitChecker() {
-	if ($('#addImg').children().length > 1) {
-		$('#toPortal').show()
-	} else {
-		$('#toPortal').hide()
-	}
+function submitChecker () {
+  if ($('#addImg').children().length > 1) {
+    $('#toPortal').show()
+  } else {
+    $('#toPortal').hide()
+  }
 }
 
-$('#toPortal').on('click', function(req, res) {
-	window.location.assign('/portal')
-});
-
+$('#toPortal').on('click', function (req, res) {
+  window.location.assign('/portal')
+})

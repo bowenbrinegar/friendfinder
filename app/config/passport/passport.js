@@ -1,4 +1,5 @@
-var bCrypt = require('bcrypt-nodejs')
+var bCrypt = require('bcrypt-nodejs');
+var FacebookStrategy = require('passport-facebook').Strategy;
 
 module.exports = function (passport, user) {
   var Users = user
@@ -97,4 +98,24 @@ module.exports = function (passport, user) {
       })
     }
   ))
+
+
+  passport.use(new FacebookStrategy({
+    new FacebookStrategy({
+      clientID: FACEBOOK_APP_ID,
+      clientSecret: FACEBOOK_APP_SECRET,
+      callbackURL: "http://localhost:3000/auth/facebook/callback",
+      profileFields: ['id', 'displayName', 'photos', 'email']
+    }, function (accessToken, refreshToken, profile, done) {
+        console.log(profile)
+        var user = new user ({
+          email: profile.email
+          name: profile.displayName
+        })
+
+        Facebooks.findOne({where: {email: user.email}})
+
+      })
+    }
+  ));
 }

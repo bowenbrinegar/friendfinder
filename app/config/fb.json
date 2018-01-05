@@ -1,0 +1,5 @@
+"facebook":{
+  "app_id":"139817669999039",
+  "app_secret":"cc8edffa181b51bd8c88810d76df69f8",
+  "callback":"http://localhost:3000/auth/facebook/callback"
+},

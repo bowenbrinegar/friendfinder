@@ -25,7 +25,9 @@
 				<input type="text" name="bio" placeholder="bio">
 				<input type="text" name="college" placeholder="college">
 				<input type="text" name="work" placeholder="work">
-				<input type="text" name="age" placeholder="age">
+				<input type="text" name="age" placeholder="age"
+					   maxlength="2"
+					   onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
 				<div id='genderContainer'>
 					<div id='genderFloat'>
 						<ul>

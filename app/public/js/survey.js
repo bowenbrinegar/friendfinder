@@ -34,7 +34,6 @@ $(document).ready(function () {
     let boxes = $grid.children()
     boxes.each(function() {
       let color = $(this).css('background-color')
-      console.log('color', color)
       if (color === 'rgb(255, 235, 59)') {
         let text = $(this).children().eq(0)
         text.css('color', 'black')
@@ -103,10 +102,19 @@ $(document).ready(function () {
 	function inputChecker() {
       let checker = true;
       $('#bioForm > input').each(function () {
-        if ($(this).val() == '') { checker = false }
+        if ($(this).val() === '') { checker = false }
       })
       return checker
 	}
+
+	function bioChecker() {
+      let checker3 = true;
+      console.log('before', checker3)
+      let value = $('#bioForm > textarea').val()
+      value.length === 0 ? checker3 = false : null;
+      console.log('after', checker3)
+      return checker3
+    }
 
 	function radioChecker() {
       let total = false;
@@ -123,7 +131,7 @@ $(document).ready(function () {
 	}
 
 	function submitShow() {
-      radioChecker() && inputChecker() ?
+      radioChecker() && inputChecker() && bioChecker() ?
         $('#bioSubmit').show() :
         $('#bioSubmit').hide()
 	}

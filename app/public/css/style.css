@@ -151,7 +151,7 @@
 	-o-transform: translate(-50%,-50%);
 	transform: translate(-50%,-50%);
     padding-top: 50px;
-	top: 50%;
+	top: 45%;
 	left: 50%;
 	width: 80%;
     height: 100%;
@@ -167,7 +167,6 @@
 	border: none;
 }
 
-
 #bioForm > input::-webkit-input-placeholder {
     text-align: center;
 }
@@ -177,7 +176,8 @@ textarea {
     resize: none;
     border-radius: 10px;
     border: none;
-    padding: 10px
+    padding: 10px;
+    margin-bottom: 5px;
 }
 
 textarea::-webkit-input-placeholder {
@@ -240,7 +240,7 @@ input[type='radio']:checked + label {
 #bioSubmit {
     display: none;
     position: absolute;
-    bottom: 20%;
+    bottom: 0;
     right: 0;
     border: none;
     border-radius: 50%;

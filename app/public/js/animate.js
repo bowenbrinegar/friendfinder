@@ -15,6 +15,10 @@ $(document).ready(function () {
   const $editor = $('#editor')
   const $profileStats = $('#profileStats')
 
+  const $matchesView = $('#matchesView');
+  const $profileView = $('#profileView');
+
+
 
   $profileBox.hide()
   $focusDetails.hide()
@@ -142,15 +146,15 @@ $(document).ready(function () {
     e.stopPropagation();
     if (profileViewTurn) {
       if (!matchesTurn) {
-        $('#matchesView').hide('slide', {direction: 'up'}, 1000, null)
+        $matchesView.hide('slide', {direction: 'up'}, 1000, null)
         matchesTurn = !matchesTurn
       }
-      $('#profileView').show('slide', {direction: 'down'}, 1000, null)
+      $profileView.show('slide', {direction: 'down'}, 1000, null)
       profileViewTurn = !profileViewTurn
       return
     }
 
-    $('#profileView').hide('slide', {direction: 'up'}, 1000, null)
+    $profileView.hide('slide', {direction: 'up'}, 1000, null)
     profileViewTurn = !profileViewTurn
   })
 
@@ -158,14 +162,14 @@ $(document).ready(function () {
     e.stopPropagation();
     if (matchesTurn) {
       if (!profileViewTurn) {
-        $('#profileView').hide('slide', {direction: 'up'}, 1000, null)
+        $profileView.hide('slide', {direction: 'up'}, 1000, null)
         profileViewTurn = !profileViewTurn
       }
-      $('#matchesView').show('slide', {direction: 'down'}, 1000, null)
+      $matchesView.show('slide', {direction: 'down'}, 1000, null)
       matchesTurn = !matchesTurn
       return
     }
-    $('#matchesView').hide('slide', {direction: 'up'}, 1000, null)
+    $matchesView.hide('slide', {direction: 'up'}, 1000, null)
     matchesTurn = !matchesTurn
   })
 

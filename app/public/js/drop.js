@@ -55,7 +55,7 @@ function fetchPath () {
 function getAWS (data, callback) {
   $('#addImg').empty()
   for (let i = 0; i < data.length; i++) {
-    let temp = {path: data[i].path}
+    let temp = {path: data[i]}
     $.ajax({
       type: 'POST',
       url: '/get-aws',

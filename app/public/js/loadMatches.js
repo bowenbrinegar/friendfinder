@@ -1,5 +1,7 @@
 $(document).ready(function() {
+  let turn = true
   const renderMatches = res => {
+    // noinspection JSJQueryEfficiency
     $('#matchContainer').empty()
     for (let i = 0; i < res.length; i++) {
       let img = $("<img class='matchImg'>")
@@ -31,9 +33,10 @@ $(document).ready(function() {
   }
   getMatches()
 
-  $('#like').on('click', function(e) {
-    e.stopPropagation();
-    setTimeout(getMatches, 3000);
+  $('#goMatches').on('click', function(e) {
+    e.stopPropagation()
+    if (turn) { getMatches() }
+    turn = !turn
   })
 
 })

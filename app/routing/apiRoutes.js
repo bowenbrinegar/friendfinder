@@ -33,16 +33,6 @@ module.exports = function (app, passport, s3) {
     })
   })
 
-  app.post('/submit-image', isLoggedIn, function (req, res) {
-  	db.Images.create({
-      img: req.body.imgUrl,
-      UserId: req.user.id
-    }).then(function (err) {
-      console.log('submit image success')
-      res.redirect('/portal')
-    })
-  })
-
   app.post('/interest-submit', isLoggedIn, function (req, res) {
     db.Interests.create({
       interest: req.body.interest,
@@ -71,13 +61,19 @@ module.exports = function (app, passport, s3) {
     }).then(data => {
       res.send('success')
     })
+
+    db.Users.update({status: 'active'}, {where: {id: req.user.id}})
   })
 
   app.get('/get-path', isLoggedIn, function (req, res) {
     db.Images.findAll({
       where: {UserId: req.user.id}
     }).then(data => {
-      res.send(data)
+      let arr = []
+      for (let i = 0; i < data.length; i++) {
+        arr.push(data[i].path)
+      }
+      res.send(arr)
     })
   })
 
@@ -103,22 +99,26 @@ module.exports = function (app, passport, s3) {
   })
 
   app.post('/get-one', isLoggedIn, function (req, res) {
+    console.log("here", req.body.arr)
     db.Images.findOne({
-        where: {
-          UserId: {
-            [Op.ne]: req.user.id,
-            [Op.notIn]: req.body.arr
-          }
+      where: {
+        UserId: {
+          $ne: req.user.id,
+          $notIn: req.body.arr
         }
-      }).then(data => {
-        if (data) {
-          let params = {Bucket: 'friendfinder192837465', Key: data.dataValues.path}
-          let url = s3.getSignedUrl('getObject', params)
-          let obj = {url: url, id: data.dataValues.UserId}
-          res.json(obj)
-          return
-        }
-      })
+      }
+    }).then(data => {
+      if (data) {
+        let params = {Bucket: 'friendfinder192837465', Key: data.dataValues.path}
+        let url = s3.getSignedUrl('getObject', params)
+        let obj = {url: url, id: data.dataValues.UserId}
+        res.json(obj)
+      } else {
+        res.status(500)
+      }
+    }).catch(err => {
+      console.log(err)
+    })
   })
 
   app.post('/get-aws-user', isLoggedIn, function (req, res) {
@@ -132,7 +132,7 @@ module.exports = function (app, passport, s3) {
   app.get('/get-profile', isLoggedIn, function (req, res) {
     db.Users.findOne({where: {id: req.user.id}, include: [db.Bios, db.Images]})
       .then(data => {
-        let imgArr = [];
+        let imgArr = []
         for (let i = 0; i < data.Images.length; i++) {
           let params = {Bucket: 'friendfinder192837465', Key: data.Images[i].dataValues.path}
           let url = s3.getSignedUrl('getObject', params)
@@ -143,15 +143,14 @@ module.exports = function (app, passport, s3) {
       })
   })
 
-  app.get('/get-matches', isLoggedIn, function(req, res) {
+  app.get('/get-matches', isLoggedIn, function (req, res) {
     db.Matches.findAll({where: {UserId: req.user.id}})
       .then(data => {
-        console.log(data)
         res.send(data)
       })
   })
 
-  app.post('/get-matches-url', isLoggedIn, function(req, res) {
+  app.post('/get-matches-url', isLoggedIn, function (req, res) {
     db.Users.findAll({where: {id: {[Op.in]: req.body.arr}},
       include: [{model: db.Images, limit: 1}]})
       .then(data => {
@@ -164,9 +163,9 @@ module.exports = function (app, passport, s3) {
         }
         res.json(imgArr)
       })
-  });
+  })
 
-  app.post('/load-on-view', isLoggedIn, function(req, res) {
+  app.post('/load-on-view', isLoggedIn, function (req, res) {
     db.Images.findOne({where: {UserId: req.body.id}})
       .then(data => {
         let params = {Bucket: 'friendfinder192837465', Key: data.path}
@@ -176,53 +175,46 @@ module.exports = function (app, passport, s3) {
       })
   })
 
-  app.post('/like', isLoggedIn, function(req, res) {
+  app.post('/match-checker', function(req, res) {
+    db.Likes.findOne({where: {likeId: req.user.id, userId: req.body.choiceId}})
+      .then(data => { data ? res.send(data) : res.send(404) })
+  })
+
+  app.post('/like', isLoggedIn, function (req, res) {
     db.Likes.create({
       likeId: req.body.choiceId,
       status: 'like',
       UserId: req.user.id
-    }).then(data => {
-      console.log('success')
+    }).then(() => {
+      res.send('success')
+    }).catch(() => {
+      res.status(500)
     })
-
-    db.Likes.findOne({where: {likeId: req.user.id, userId: req.body.choiceId}})
-      .then(data => {
-        if (data) {
-          res.send(data)
-        } else (
-          res.send('n/a')
-        )
-      })
   })
 
-  app.post('/create-match', isLoggedIn, function(req, res) {
+  app.post('/create-match', isLoggedIn, function (req, res) {
     db.Matches.findOrCreate({where: {
-        matchId: req.body.UserId,
-        UserId: req.user.id
-      }
-    }).then(data => {
-      res.send('success')
-    });
+      matchId: req.body.UserId,
+      UserId: req.user.id
+    }})
     db.Matches.findOrCreate({where: {
-        matchId: req.user.id,
-        UserId: req.body.UserId
-      }
-    }).then(data => {
-      res.send('success')
-    });
+      matchId: req.user.id,
+      UserId: req.body.UserId
+    }})
+    res.send('success')
   })
 
-  app.post('/dislike', isLoggedIn, function(req, res) {
+  app.post('/dislike', isLoggedIn, function (req, res) {
     db.Likes.create({
       likeId: req.body.choiceId,
       status: 'dislike',
       UserId: req.user.id
     }).then(data => {
-        res.send('success')
-    });
-  });
+      res.send('success')
+    })
+  })
 
-  app.post('/fetch-next', isLoggedIn, function(req, res) {
+  app.post('/fetch-next', isLoggedIn, function (req, res) {
     db.Images.findOne({where: {UserId: req.body.nextId}})
       .then(data => {
         if (data) {
@@ -230,18 +222,17 @@ module.exports = function (app, passport, s3) {
           let url = s3.getSignedUrl('getObject', params)
           let obj = {url: url, id: req.body.nextId}
           res.json(obj)
-          return
         }
-      });
-  });
+      })
+  })
 
-  app.get('/get-likes', isLoggedIn, function(req, res) {
+  app.get('/get-likes', isLoggedIn, function (req, res) {
     db.Likes.findAll({where: {UserId: req.user.id}})
       .then(data => {
         res.send(data)
       }).catch(err => {
         console.log(err)
-    })
+      })
   })
 
   // app.get('/get-dislikes', isLoggedIn, function(req, res) {

@@ -1,7 +1,6 @@
 $(document).ready(function () {
 	var $grid = $('#interestGrid');
-
-
+	
 	$grid.masonry({
 		itemSelector: '.interest-item',
 		columnWidth: 22
@@ -10,10 +9,7 @@ $(document).ready(function () {
 	var interestARR = [];
 
 	var color = function () {
-		let arr = ['DarkMagenta', 'DeepSkyBlue', 'DarkGrey', 'DarkGoldenRod',
-			'DarkSalmon', 'SpringGreen', 'FireBrick', 'Orchid', 'BlueViolet',
-			'Indigo', 'DarkViolet', 'Sienna', 'DarkCyan', 'Fuchsia', 'SeaGreen',
-			'SaddleBrown', 'DarkTurquoise', 'Green', 'MidnightBlue']
+		let arr = ['#3F51B5', '#FFEB3B', '#8BC34A', '#9C27B0', '#F44336']
 		return arr[Math.floor(Math.random() * arr.length)]
 	}
 
@@ -27,14 +23,29 @@ $(document).ready(function () {
       var text = $(`<span>${arr[i]}</span>`);
       var check = $(`<div>`).addClass('check').append(text).append(`<span class="glyphicon glyphicon-ok"></span>`);
       var box = $(`<div data-tool="${arr[i]}">`).addClass('interest-item')
-										.css('background', color()).append(text).append(check);
+										.css('background-color', color()).append(text).append(check);
       $grid.append(box)
       $grid.masonry('appended', box)
+      blackAndYellow();
     }
   }()
 
+  function blackAndYellow () {
+    let boxes = $grid.children()
+    boxes.each(function() {
+      let color = $(this).css('background-color')
+      console.log('color', color)
+      if (color === 'rgb(255, 235, 59)') {
+        let text = $(this).children().eq(0)
+        text.css('color', 'black')
+      }
+    })
+  }
+
+  let count = 0;
+
   $('.interest-item').on('click', function () {
-    if ($(this).children().eq(1).css('display') == 'block') {
+    if ($(this).children().eq(1).css('display') === 'block') {
       $(this).children().eq(1).toggle()
       $(this).data('data-selected', false)
       for (var i = 0; i < interestARR.length; i++) {
@@ -42,6 +53,7 @@ $(document).ready(function () {
           interestARR.splice(i, 1)
         }
       }
+      count--;
       nextValidator();
       return
     }
@@ -49,34 +61,21 @@ $(document).ready(function () {
     $(this).data('data-selected', true);
     $(this).children().eq(1).toggle();
     interestARR.push($(this).attr('data-tool'));
+    count++;
     nextValidator()
   });
 
   function nextValidator () {
-    let count = 0;
-    let temp = $grid.children();
-    let turn = false;
-    for (var i = 0; i < temp.length; i++) {
-      if (temp.eq([i]).data().dataSelected) {
-        count++
-        if (count > 4) {
-          $('#next').show('slide', {direction: 'down'}, 500, null)
-          turn = true
-        } else {
-          $('#next').hide('slide', {direction: 'down'}, 500, null)
-          turn = false
-        }
-      }
-    }
-    if (turn) {
-      $('.interestContainer').animate({
-        'left': '45%'
-      })
-    } else {
-      $('.interestContainer').animate({
-        'left': '51%'
-      })
-    }
+    let turn = false
+    count > 4 ?
+      ( $('#next').show('slide', {direction: 'down'}, 500, null),
+      turn = true ) :
+      ( $('#next').hide('slide', {direction: 'down'}, 500, null),
+      turn = false )
+
+    turn ?
+    $('.interestContainer').animate({ 'left': '45%' }) :
+    $('.interestContainer').animate({ 'left': '51%' })
   }
 
   $('#next').hide()
@@ -104,9 +103,7 @@ $(document).ready(function () {
 	function inputChecker() {
       let checker = true;
       $('#bioForm > input').each(function () {
-          if ($(this).val() == '') {
-              checker = false
-          };
+        if ($(this).val() == '') { checker = false }
       })
       return checker
 	}
@@ -114,43 +111,32 @@ $(document).ready(function () {
 	function radioChecker() {
       let total = false;
       let checker1 = false;
-      $("[name='looking']").each(function() {
-          if ($(this).prop('checked')) {
-              checker1 = true
-          }
-      });
       let checker2 = false;
-      $("[name='sex']").each(function()  {
-          if ($(this).prop('checked')) {
-              checker2 = true;
-          }
-
+      $("[name='looking']").each(function() {
+        if ($(this).prop('checked')) { checker1 = true }
       });
-      if (checker1 & checker2) {
-          total = true
-      }
+      $("[name='sex']").each(function()  {
+        if ($(this).prop('checked')) { checker2 = true }
+      });
+      if (checker1 & checker2) { total = true }
       return total
 	}
 
 	function submitShow() {
-      if (radioChecker() && inputChecker())  {
-          $('#bioSubmit').show()
-      } else {
-          $('#bioSubmit').hide()
-      }
+      radioChecker() && inputChecker() ?
+        $('#bioSubmit').show() :
+        $('#bioSubmit').hide()
 	}
 
   $('#surveyContainer').on("keyup", function () {
    	submitShow();
   })
 
-	$('#surveyContainer').on("click", function () {
-		submitShow();
-	})
+  $('#surveyContainer').on("click", function () {
+    submitShow();
+  })
 
   $('#bioSubmit').on('click', function() {
   	$('#imgSubmit').show()
   })
-
-
 })

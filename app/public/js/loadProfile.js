@@ -6,7 +6,7 @@ $(document).ready(function () {
   };
 
   const bio = bio => {
-    $('#profileStats p').append(bio.bio)
+    $('#profileStats').find('p').append(bio.bio)
     hdb(bio)
   }
 

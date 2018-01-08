@@ -21,8 +21,8 @@
 		</div>
 		<button id='next'><span class='glyphicon glyphicon-chevron-right'></span></button>
 		<div id="surveyContainer">
-			<form id="bioForm" action='/submit-survey' method='POST'>
-				<input type="text" name="bio" placeholder="bio">
+			<form id="bioForm" autocomplete="off" action='/submit-survey' method='POST'>
+				<textarea name='bio' rows="5" cols="50" maxlength='280' placeholder='bio'></textarea>
 				<input type="text" name="college" placeholder="college">
 				<input type="text" name="work" placeholder="work">
 				<input type="text" name="age" placeholder="age"

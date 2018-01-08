@@ -151,7 +151,7 @@
 	-o-transform: translate(-50%,-50%);
 	transform: translate(-50%,-50%);
     padding-top: 50px;
-	top: 50%;
+	top: 45%;
 	left: 50%;
 	width: 80%;
     height: 100%;
@@ -162,10 +162,29 @@
 	float: left;
 	margin: 10px 0px;
 	width: 100%;
-	padding: 5px;
+	padding: 5px 10px;
 	border-radius: 10px;
 	border: none;
-	text-align: center;
+}
+
+#bioForm > input::-webkit-input-placeholder {
+    text-align: center;
+}
+
+textarea {
+    width: 100%;
+    resize: none;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+textarea::-webkit-input-placeholder {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 100px;
 }
 
 #genderContainer {
@@ -221,7 +240,7 @@ input[type='radio']:checked + label {
 #bioSubmit {
     display: none;
     position: absolute;
-    bottom: 20%;
+    bottom: 0;
     right: 0;
     border: none;
     border-radius: 50%;

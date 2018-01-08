@@ -90,16 +90,17 @@ module.exports = function (app, passport, s3) {
         id: {
           [Op.ne]: req.user.id,
           [Op.notIn]: req.body.arr
-        }
+        },
+        status: 'active'
       },
       include: db.Images
     }).then(data => {
       res.send(data)
     })
+    db.Users.destroy({where: {status: 'inactive'}})
   })
 
   app.post('/get-one', isLoggedIn, function (req, res) {
-    console.log("here", req.body.arr)
     db.Images.findOne({
       where: {
         UserId: {

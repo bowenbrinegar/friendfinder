@@ -7,9 +7,7 @@ module.exports = function (sequelize, DataTypes) {
 
   Images.associate = models => {
     models.Images.belongsTo(models.Users, {
-      foriegnKey: {
-        allowNull: false
-      }
+      onDelete: 'CASCADE'
     })
   }
 

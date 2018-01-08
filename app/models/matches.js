@@ -8,9 +8,7 @@ module.exports = function (sequelize, DataTypes) {
 
   Matches.associate = models => {
     models.Matches.belongsTo(models.Users, {
-      foreignKey: {
-        allowNull: false
-	  }
+      onDelete: 'CASCADE'
 	});
   }
 

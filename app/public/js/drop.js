@@ -1,5 +1,4 @@
 const drop = function (evt) {
-  console.log('drop')
   evt.preventDefault()
   let dt = evt.dataTransfer
   let file = dt.items[ 0 ].getAsFile()
@@ -10,12 +9,10 @@ const drop = function (evt) {
 }
 
 const dragover = function (evt) {
-  console.log('dragOver')
   evt.preventDefault()
 }
 
 const dragend = function (evt) {
-  console.log('dragEnd')
   const dt = evt.dataTransfer
   if (dt.items) {
     for (let i = 0; i < dt.items.length; i++) {
@@ -34,7 +31,6 @@ function imageUpload (formData) {
     processData: false,
     contentType: false
   }).done(function (data) {
-    console.log('success')
     fetchPath()
   })
 };

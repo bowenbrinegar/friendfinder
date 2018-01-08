@@ -7,9 +7,7 @@ module.exports = function (sequelize, DataTypes) {
 
   Interests.associate = models => {
     models.Interests.belongsTo(models.Users, {
-      foreignKey: {
-        allowNull: false
-	  }
+      onDelete: 'CASCADE'
     })
   }
 

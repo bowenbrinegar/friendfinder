@@ -22,19 +22,27 @@ module.exports = function (sequelize, DataTypes) {
 
   Users.associate = models => {
     models.Users.hasMany(models.Likes, {
-      onDelete: 'CASCADE'
+      foriegnKey: {
+        allowNull: false
+      }
     })
 
     models.Users.hasMany(models.Matches, {
-      onDelete: 'CASCADE'
+      foriegnKey: {
+        allowNull: false
+      }
     })
 
     models.Users.hasMany(models.Interests, {
-      onDelete: 'CASCADE'
+      foriegnKey: {
+        allowNull: false
+      }
     })
 
     models.Users.hasMany(models.Images, {
-      onDelete: 'CASCADE'
+      foriegnKey: {
+        allowNull: false
+      }
     })
 
     models.Users.hasOne(models.Bios, {

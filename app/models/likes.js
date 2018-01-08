@@ -12,9 +12,7 @@ module.exports = function (sequelize, DataTypes) {
 
   Likes.associate = models => {
     models.Likes.belongsTo(models.Users, {
-      foreignKey: {
-        allowNull: false
-	  }
+      onDelete: 'CASCADE'
     });
   }
 

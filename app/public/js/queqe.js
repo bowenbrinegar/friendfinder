@@ -146,9 +146,8 @@ $(document).ready(function () {
   });
 
   ! function () {
-    let obj = {arr: readAttrs()};
+    let obj = {arr: [0,1]};
     setTimeout(function () {
-      console.log(obj);
       $.ajax({
         type: 'POST',
         url: '/queqe',
@@ -159,6 +158,7 @@ $(document).ready(function () {
   }();
 
   function getAWS (data) {
+    if (data === 'n/a') { console.log('return'); return }
     for (let i = 0; i < data.length; i++) {
       let temp = {data: data[i]};
       $.ajax({

@@ -44,24 +44,22 @@ $(document).ready(function () {
   let count = 0;
 
   $('.interest-item').on('click', function () {
-    if ($(this).children().eq(1).css('display') === 'block') {
-      $(this).children().eq(1).toggle()
+    let $marked = $(this).children().eq(1)
+    if ($marked.css('display') === 'block') {
+      $marked.toggle()
       $(this).data('data-selected', false)
       for (var i = 0; i < interestARR.length; i++) {
         if (interestARR[i] === $(this).attr('data-tool')) {
           interestARR.splice(i, 1)
         }
       }
-      count--;
-      nextValidator();
-      return
+      count--; nextValidator(); return
     }
 
     $(this).data('data-selected', true);
     $(this).children().eq(1).toggle();
     interestARR.push($(this).attr('data-tool'));
-    count++;
-    nextValidator()
+    count++; nextValidator();
   });
 
   function nextValidator () {
@@ -84,9 +82,8 @@ $(document).ready(function () {
       $.ajax({
         url: '/interest-submit',
         type: 'POST',
-        data: data
-      }).done(function (data) {
-        console.log('success')
+        data: data,
+        success: () => { console.log('success') }
       })
     }
     $('.interestContainer').hide()
@@ -108,12 +105,10 @@ $(document).ready(function () {
 	}
 
 	function bioChecker() {
-      let checker3 = true;
-      console.log('before', checker3)
-      let value = $('#bioForm > textarea').val()
-      value.length === 0 ? checker3 = false : null;
-      console.log('after', checker3)
-      return checker3
+      let checker = true;
+      let value = $('#bioForm > textarea').val();
+      value.length === 0 ? checker = false : null;
+      return checker;
     }
 
 	function radioChecker() {

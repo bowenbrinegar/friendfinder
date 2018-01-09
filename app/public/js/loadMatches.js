@@ -12,6 +12,7 @@ $(document).ready(function() {
   }
 
   const fetchUrls = res => {
+    if (res === 'n/a') { console.log('return'); return}
     let matchArr = []
     for (let i = 0; i < res.length; i++) {
       matchArr.push(res[i].matchId)

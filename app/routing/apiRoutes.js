@@ -95,8 +95,10 @@ module.exports = function (app, passport, s3) {
       },
       include: db.Images
     }).then(data => {
-      res.send(data)
+      data == null ? res.send(data) : res.send('n/a')
+    }).catch(err => {
     })
+
     db.Users.destroy({where: {status: 'inactive'}})
   })
 
@@ -147,7 +149,7 @@ module.exports = function (app, passport, s3) {
   app.get('/get-matches', isLoggedIn, function (req, res) {
     db.Matches.findAll({where: {UserId: req.user.id}})
       .then(data => {
-        res.send(data)
+        data == null ? res.send(data) : res.send('n/a')
       })
   })
 

@@ -19,14 +19,14 @@
     "express-fileupload": "^0.3.0",
     "express-handlebars": "^2.0.1",
     "express-session": "^1.15.6",
+    "jquery": "^3.2.1",
     "mysql": "^2.10.2",
     "mysql2": "^1.5.1",
-    "nodemon": "^1.14.7",
+    "nodemon": "^1.14.10",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "sequelize": "^4.28.6",
-    "survey-jquery": "^0.98.6",
-    "jquery": "^3.2.1"
+    "survey-jquery": "^0.98.6"
   },
   "devDependencies": {
     "eslint": "^4.14.0",

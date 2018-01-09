@@ -18,8 +18,6 @@ $(document).ready(function () {
   const $matchesView = $('#matchesView');
   const $profileView = $('#profileView');
 
-
-
   $profileBox.hide()
   $focusDetails.hide()
 
@@ -172,8 +170,5 @@ $(document).ready(function () {
     $matchesView.hide('slide', {direction: 'up'}, 1000, null)
     matchesTurn = !matchesTurn
   })
-
-
-
 
 })

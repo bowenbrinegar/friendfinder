@@ -1,4 +1,7 @@
 $(document).ready(function () {
+
+  //code for user profile
+
   const renderProf = res => {
     bio(res.bio)
     img(res)
@@ -31,7 +34,7 @@ $(document).ready(function () {
     }
   }
 
-  !(function () {
+  !(() => {
     $.ajax({
       type: 'GET',
       url: '/get-profile',
@@ -39,4 +42,7 @@ $(document).ready(function () {
     })
   }())
 
+
+
+  //code for profile on view
 });

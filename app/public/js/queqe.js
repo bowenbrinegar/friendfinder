@@ -146,7 +146,7 @@ $(document).ready(function () {
   });
 
   ! function () {
-    let obj = {arr: [0,1]};
+    let obj = readAttrs();
     setTimeout(function () {
       $.ajax({
         type: 'POST',

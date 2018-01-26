@@ -148,7 +148,7 @@ module.exports = function (app, passport, s3) {
   app.get('/get-matches', isLoggedIn, function (req, res) {
     db.Matches.findAll({where: {UserId: req.user.id}})
       .then(data => {
-        data == null ? res.send(data) : res.send('n/a')
+        data !== null ? res.send(data) : res.send('n/a')
       })
   })
 

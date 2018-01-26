@@ -83,7 +83,7 @@ $(document).ready(function () {
         url: '/interest-submit',
         type: 'POST',
         data: data,
-        success: () => { console.log('success') }
+        success: () => {}
       })
     }
     $('.interestContainer').hide()

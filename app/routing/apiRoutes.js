@@ -184,8 +184,13 @@ module.exports = function (app, passport, s3) {
   })
 
   app.post('/match-checker', function(req, res) {
-    db.Likes.findOne({where: {likeId: req.user.id, userId: req.body.choiceId}})
-      .then(data => { data !== null ? res.send(data) : res.send('n/a') })
+    db.Likes.findOne({
+      where: {
+        likeId: req.user.id,
+        userId: req.body.choiceId
+      }})
+      .then(data => data !== null ? res.send(data) : res.send('n/a'))
+      .catch(err =>  console.log(err))
   })
 
   app.post('/like', isLoggedIn, function (req, res) {

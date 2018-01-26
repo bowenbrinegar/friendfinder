@@ -4,7 +4,6 @@ const drop = function (evt) {
   let file = dt.items[ 0 ].getAsFile()
   let formData = new FormData()
   formData.append('myFile', file, file.name)
-  console.log(formData)
   imageUpload(formData)
 }
 

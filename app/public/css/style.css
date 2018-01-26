@@ -554,6 +554,26 @@ input[type='radio']:checked + label {
 	background: rgba(0,0,0,.5);
 }
 
+#red {
+    display: none;
+    position: absolute;
+    background: rgba(255, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+#green {
+    display: none;
+    position: absolute;
+    background: rgba(0, 255, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    z-index: 1;
+}
+
 .profileOnView > img {
 	position: absolute;
 	left: 50%;

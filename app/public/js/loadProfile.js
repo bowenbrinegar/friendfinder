@@ -34,13 +34,13 @@ $(document).ready(function () {
     }
   }
 
-  !(() => {
+  !function() {
     $.ajax({
       type: 'GET',
       url: '/get-profile',
       success: renderProf
     })
-  }())
+  }()
 
 
 

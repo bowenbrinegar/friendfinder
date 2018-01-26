@@ -1,7 +1,6 @@
 $(document).ready(function () {
   let count = 0;
   let count2 = 0;
-  let turn = true;
 
   //render functions
 
@@ -98,7 +97,6 @@ $(document).ready(function () {
   }
 
   function fetchNext() {
-    console.log('fetch next fired')
     let $next = $('#queqe').children().eq(0);
     let obj = {nextId: $next.attr('data-id')}
     $next.remove();
@@ -135,30 +133,6 @@ $(document).ready(function () {
     })
   }
 
-  function like() {
-    let obj = {choiceId: $('.profileOnView img').attr('data-id')};
-    $.ajax({
-      type: 'POST',
-      url: '/like',
-      data: obj,
-      success: matchChecker,
-      error: {
-        500: function(xhr, textStatus, errorThrown) {
-          alert(errorThrown)
-        }
-      }
-    });
-  }
-
-  function dislike() {
-    let obj = {choiceId: $('.profileOnView img').attr('data-id')};
-    $.ajax({
-      type: 'POST',
-      url: '/dislike',
-      data: obj,
-      success: fetchNext
-    });
-  }
 
   //on-click profile on view ajax
 
@@ -243,7 +217,6 @@ $(document).ready(function () {
 
   function fetchOne() {
     let obj = {arr: readAttrs()};
-    console.log(obj)
     setTimeout(function() {
       $.ajax({
         type: 'POST',

@@ -242,15 +242,4 @@ module.exports = function (app, passport, s3) {
         console.log(err)
       })
   })
-
-  // app.get('/get-dislikes', isLoggedIn, function(req, res) {
-  //
-  // })
-  // app.put("/", function(req, res) {
-
-  // });
-
-  // app.delete("/", function(req, res) {
-
-  // });
 }

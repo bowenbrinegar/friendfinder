@@ -4,25 +4,32 @@ $(document).ready(function () {
 
   //render functions
 
-  function renderQueqe (response) {
-    let html = `<img class='imgQueqe' src=${response.url} data-id=${response.id}>`
-    $('#queqe').prepend(html)
-  };
-
-  function renderOne (response) {
-    let html = `<img class='imgQueqe' style='display:block' src=${response.url} data-id=${response.id}>`
-    $('#queqe').append(html)
-  };
-
-  function renderOnView (res) {
-    let $img = $('.profileOnView img');
-    $img.removeAttr('src');
-    $img.attr('src', res.url);
-    $img.attr('data-id', res.id)
-    if (count > 0) {
-      fetchOne();
+  class Render {
+    static queqe(response) {
+      let html = `<img class='imgQueqe' src=${response.url} data-id=${response.id}>`
+      $('#queqe').prepend(html)
     }
-    count++
+    static one(response) {
+      let turn = $('.selectContainer').attr('data-turn');
+      let html = ``;
+      if (turn) {
+        html = `<img class='imgQueqe' style='display: block' src=${response.url} data-id=${response.id}>`
+      } else {
+        html = `<img class='imgQueqe' style='display: none' src=${response.url} data-id=${response.id}>`
+      }
+      $('#queqe').append(html)
+    }
+
+    static onView(res) {
+      let $img = $('.profileOnView img');
+      $img.removeAttr('src');
+      $img.attr('src', res.url);
+      $img.attr('data-id', res.id)
+      if (count > 0) {
+        fetchOne();
+      }
+      count++
+    }
   }
 
   function alertFunc(res) {
@@ -71,7 +78,7 @@ $(document).ready(function () {
       type: 'POST',
       url: '/fetch-next',
       data: obj,
-      success: renderOnView
+      success: Render.onView
     })
   }
 
@@ -111,15 +118,15 @@ $(document).ready(function () {
       type: 'POST',
       url: '/load-on-view',
       data: id,
-      success: renderOnView
+      success: Render.onView
     })
     $(this).remove()
   })
 
   //on-click like ajax post
 
-  $('#like').on("click", function(evt) {
-    evt.stopPropagation();
+  const like = () => {
+    $('#green').css('display', 'none')
     let obj = {choiceId: $('.profileOnView img').attr('data-id')};
     $.ajax({
       type: 'POST',
@@ -132,11 +139,10 @@ $(document).ready(function () {
         }
       }
     });
-  });
+  }
 
-
-  $('#dislike').on("click", function(evt) {
-    evt.stopPropagation();
+  const dislike = () => {
+    $('#red').css('display', 'none')
     let obj = {choiceId: $('.profileOnView img').attr('data-id')};
     $.ajax({
       type: 'POST',
@@ -144,6 +150,20 @@ $(document).ready(function () {
       data: obj,
       success: fetchNext
     });
+  }
+
+
+  $('#like').on("click", function(evt) {
+    evt.stopPropagation();
+    $('#green').css('display', 'block')
+    setTimeout(like, 300)
+
+  });
+
+  $('#dislike').on("click", function(evt) {
+    evt.stopPropagation();
+    $('#red').css('display', 'block')
+    setTimeout(dislike, 300)
   });
 
   ! function () {
@@ -166,7 +186,7 @@ $(document).ready(function () {
         type: 'POST',
         url: '/get-aws-user',
         data: temp,
-        success: i === 0 ? renderOnView : renderQueqe
+        success: i === 0 ? Render.onView : Render.queqe
       });
     }
   }
@@ -179,7 +199,7 @@ $(document).ready(function () {
         type: 'POST',
         url: '/get-one',
         data: obj,
-        success: renderOne,
+        success: Render.one,
         statusCode: {
           500: function() {
             alert('severError')

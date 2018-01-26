@@ -11,20 +11,21 @@ $(document).ready(function () {
       $('#queqe').prepend(html)
     }
     static one(response) {
-      let html = `<img class='imgQueqe' style='display:block' src=${response.url} data-id=${response.id}>`
+      let turn = $('.selectContainer').attr('data-turn');
+      let html = ``;
+      if (turn) {
+        html = `<img class='imgQueqe' style='display: block' src=${response.url} data-id=${response.id}>`
+      } else {
+        html = `<img class='imgQueqe' style='display: none' src=${response.url} data-id=${response.id}>`
+      }
       $('#queqe').append(html)
     }
-    static onView (res) {
+
+    static onView(res) {
       let $img = $('.profileOnView img');
       $img.removeAttr('src');
-      if (res === 'n/a') {
-        $img.attr('src', './assets/imgs/profile-female.jpg');
-        turn = false;
-        return
-      }
       $img.attr('src', res.url);
       $img.attr('data-id', res.id)
-      turn = true
       if (count > 0) {
         fetchOne();
       }
@@ -72,7 +73,7 @@ $(document).ready(function () {
 
     arr.push(0);
 
-    if (count2 > 0) {
+    if (count2 > 3) {
       let $img = $('.profileOnView img');
       arr.push(parseFloat($img.attr('data-id')))
       for (var i=0; i < iter.length; i++) {
@@ -85,6 +86,7 @@ $(document).ready(function () {
       type: 'GET',
       url: '/get-likes',
       success: function(res) {
+        if (res === 'n/a') { return }
         for (let i=0; i < res.length; i++) {
           arr.push(res[i].likeId)
         }
@@ -174,26 +176,48 @@ $(document).ready(function () {
 
   //on-click like ajax post
 
+  const like = () => {
+    $('#green').css('display', 'none')
+    let obj = {choiceId: $('.profileOnView img').attr('data-id')};
+    $.ajax({
+      type: 'POST',
+      url: '/like',
+      data: obj,
+      success: matchChecker,
+      error: {
+        500: function(xhr, textStatus, errorThrown) {
+          alert(errorThrown)
+        }
+      }
+    });
+  }
+
+  const dislike = () => {
+    $('#red').css('display', 'none')
+    let obj = {choiceId: $('.profileOnView img').attr('data-id')};
+    $.ajax({
+      type: 'POST',
+      url: '/dislike',
+      data: obj,
+      success: fetchNext
+    });
+  }
+
+
   $('#like').on("click", function(evt) {
     evt.stopPropagation();
-    if (turn) {
-      $('#green').fadeIn(200).fadeOut(200)
-      setTimeout(like, 200)
-      turn = !turn
-    }
+    $('#green').css('display', 'block')
+    setTimeout(like, 300)
   });
 
   $('#dislike').on("click", function(evt) {
     evt.stopPropagation();
-    if (turn) {
-      $('#red').fadeIn(200).fadeOut(200)
-      setTimeout(dislike, 200)
-      turn = !turn
-    }
+    $('#red').css('display', 'block')
+    setTimeout(dislike, 300)
   });
 
   ! function () {
-    let obj = {arr: [0,1]};
+    let obj = {arr: readAttrs()};
     setTimeout(function () {
       $.ajax({
         type: 'POST',

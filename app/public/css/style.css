@@ -87,7 +87,7 @@
 
 .interestContainer {
 	position: absolute;
-    display: none;
+    /*display: none;*/
 	-webkit-transform: translate(-50%, -50%);
 	top: 50%;
 	left: 51%;
@@ -130,7 +130,7 @@
 }
 
 #surveyContainer {
-    /*display: none;*/
+    display: none;
 }
 
 #next {
@@ -552,6 +552,26 @@ input[type='radio']:checked + label {
 	border-radius: 50%;
 	display: inline-block;
 	background: rgba(0,0,0,.5);
+}
+
+#red {
+    display: none;
+    position: absolute;
+    background: rgba(255, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+#green {
+    display: none;
+    position: absolute;
+    background: rgba(0, 255, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    z-index: 1;
 }
 
 .profileOnView > img {

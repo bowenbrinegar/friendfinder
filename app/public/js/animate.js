@@ -56,7 +56,9 @@ $(document).ready(function () {
         1000, function () {
           selectTurn = !selectTurn
         })
+      $selectContainer.attr('data-turn', 'true')
       $queqe.show('slide', {direction: 'up'}, 1000, null);
+      $queqe.css('display', 'block')
       $viewContainer.animate({'top': '60%'}, 1000, null)
       return
     }
@@ -66,6 +68,7 @@ $(document).ready(function () {
         selectTurn = !selectTurn
       })
     $queqe.hide('slide', {direction: 'up'}, 1000, null);
+    $selectContainer.attr('data-turn', 'false')
     $viewContainer.animate({'top': '50%'}, 1000, null)
   })
 

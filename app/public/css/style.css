@@ -643,13 +643,58 @@ input[type='radio']:checked + label {
 
 .viewFocusDetails {
 	position: absolute;
-	display: none;
+	/*display: none;*/
 	right: 5%;
 	top: 5%;
 	height: 450px;
 	width: 425px;
 	background: rgba(0,0,0,.3);
 }
+
+
+#onImgs {
+    position: absolute;
+    background: rgba(0,0,0,.1);
+    height: 100px;
+    width: 100%;
+}
+
+#onImgsItem {
+    float: left;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    margin: 10px;
+}
+#onBio {
+    position: absolute;
+    top: 25%;
+    background: rgba(0,0,0,.1);
+    height: 200px;
+    width: 100%;
+}
+
+#onInterest {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0,0,0,.1);
+    height: 125px;
+    width: 100%;
+    overflow: scroll;
+}
+
+#onInterestContainer {
+    width: max-content;
+}
+
+#onInterestItem {
+    float: left;
+    height: 105px;
+    width: 105px;
+    background: rgba(0,0,0,.1);
+    margin: 10px;
+}
+
 
 
 

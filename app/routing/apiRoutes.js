@@ -84,6 +84,9 @@ module.exports = function (app, passport, s3) {
   })
 
   app.post('/queqe', isLoggedIn, function (req, res) {
+    console.log('i get here')
+    console.log("id---------", req.user.id)
+    console.log("arr---------", req.body.arr)
     db.Users.findAll({
       limit: 7,
       where: {
@@ -95,8 +98,10 @@ module.exports = function (app, passport, s3) {
       },
       include: db.Images
     }).then(data => {
-      data == null ? res.send(data) : res.send('n/a')
+      console.log("data", data)
+      data !== null ? res.json(data) : res.send('n/a')
     }).catch(err => {
+      console.log("err here", err)
     })
 
     db.Users.destroy({where: {status: 'inactive'}})
@@ -149,7 +154,7 @@ module.exports = function (app, passport, s3) {
   app.get('/get-matches', isLoggedIn, function (req, res) {
     db.Matches.findAll({where: {UserId: req.user.id}})
       .then(data => {
-        data == null ? res.send(data) : res.send('n/a')
+        data !== null ? res.send(data) : res.send('n/a')
       })
   })
 
@@ -232,7 +237,7 @@ module.exports = function (app, passport, s3) {
   app.get('/get-likes', isLoggedIn, function (req, res) {
     db.Likes.findAll({where: {UserId: req.user.id}})
       .then(data => {
-        res.send(data)
+        data !== null ? res.send(data) : res.send('n/a')
       }).catch(err => {
         console.log(err)
       })

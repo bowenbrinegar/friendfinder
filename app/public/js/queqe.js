@@ -38,7 +38,7 @@ $(document).ready(function () {
 
     arr.push(0);
 
-    if (count2 > 0) {
+    if (count2 > 3) {
       let $img = $('.profileOnView img');
       arr.push(parseFloat($img.attr('data-id')))
       for (var i=0; i < iter.length; i++) {
@@ -51,6 +51,7 @@ $(document).ready(function () {
       type: 'GET',
       url: '/get-likes',
       success: function(res) {
+        if (res === 'n/a') { return }
         for (let i=0; i < res.length; i++) {
           arr.push(res[i].likeId)
         }
@@ -146,7 +147,7 @@ $(document).ready(function () {
   });
 
   ! function () {
-    let obj = readAttrs();
+    let obj = {arr: readAttrs()};
     setTimeout(function () {
       $.ajax({
         type: 'POST',

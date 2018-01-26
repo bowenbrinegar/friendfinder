@@ -87,7 +87,6 @@
 
 .interestContainer {
 	position: absolute;
-    display: none;
 	-webkit-transform: translate(-50%, -50%);
 	top: 50%;
 	left: 51%;
@@ -261,7 +260,7 @@ input[type='radio']:checked + label {
 
 
 #imgSubmit {
-    /*display: none;*/
+    display: none;
     position: relative;
     width: 600px;
     height: 400px;
@@ -305,13 +304,13 @@ input[type='radio']:checked + label {
     background: rgba(0, 255, 0, 0.5);
     height: 100px;
     width: 100%;
+    padding-left: 10px;
 }
 
-
-
 .imgAd {
-    height: 60px;
-    width: 60px;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
     float: left;
     margin: 10px;
 }

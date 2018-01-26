@@ -191,6 +191,12 @@ module.exports = function (app, passport, s3) {
       .catch(err => console.log(err))
   })
 
+  app.get('/img-to-aws/:path', isLoggedIn, (req, res) => {
+    let params = {Bucket: 'friendfinder192837465', Key: req.params.path}
+    let url = s3.getSignedUrl('getObject', params)
+    res.send(url)
+  })
+
   app.post('/match-checker', function(req, res) {
     db.Likes.findOne({
       where: {

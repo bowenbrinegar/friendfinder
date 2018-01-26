@@ -185,7 +185,7 @@ module.exports = function (app, passport, s3) {
 
   app.post('/match-checker', function(req, res) {
     db.Likes.findOne({where: {likeId: req.user.id, userId: req.body.choiceId}})
-      .then(data => { data ? res.send(data) : res.send(404) })
+      .then(data => { data !== null ? res.send(data) : res.send('n/a') })
   })
 
   app.post('/like', isLoggedIn, function (req, res) {
@@ -225,11 +225,13 @@ module.exports = function (app, passport, s3) {
   app.post('/fetch-next', isLoggedIn, function (req, res) {
     db.Images.findOne({where: {UserId: req.body.nextId}})
       .then(data => {
-        if (data) {
+        if (data !== null) {
           let params = {Bucket: 'friendfinder192837465', Key: data.path}
           let url = s3.getSignedUrl('getObject', params)
           let obj = {url: url, id: req.body.nextId}
           res.json(obj)
+        } else {
+          res.send('n/a')
         }
       })
   })

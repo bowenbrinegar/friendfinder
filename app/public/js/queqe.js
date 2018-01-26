@@ -1,6 +1,7 @@
 $(document).ready(function () {
   let count = 0;
   let count2 = 0;
+  let turn = true;
 
   //render functions
 
@@ -31,6 +32,33 @@ $(document).ready(function () {
       count++
     }
   }
+
+  // function renderQueqe (response) {
+  //   let html = `<img class='imgQueqe' src=${response.url} data-id=${response.id}>`
+  //   $('#queqe').prepend(html)
+  // };
+
+  // function renderOne (response) {
+  //   let html = `<img class='imgQueqe' style='display:block' src=${response.url} data-id=${response.id}>`
+  //   $('#queqe').append(html)
+  // };
+
+  // function renderOnView (res) {
+  //   let $img = $('.profileOnView img');
+  //   $img.removeAttr('src');
+  //   if (res === 'n/a') {
+  //     $img.attr('src', './assets/imgs/profile-female.jpg');
+  //     turn = false;
+  //     return
+  //   }
+  //   $img.attr('src', res.url);
+  //   $img.attr('data-id', res.id)
+  //   turn = true
+  //   if (count > 0) {
+  //     fetchOne();
+  //   }
+  //   count++
+  // }
 
   function alertFunc(res) {
     alert('match!');
@@ -83,6 +111,7 @@ $(document).ready(function () {
   }
 
   function createMatch(res) {
+    if (res === 'n/a') { fetchNext(); return }
     $.ajax({
       type: 'POST',
       url: '/create-match',
@@ -102,11 +131,33 @@ $(document).ready(function () {
       type: 'POST',
       url: '/match-checker',
       data: obj,
-      codeStatus: {
-        404: fetchNext()
-      },
       success: createMatch
     })
+  }
+
+  function like() {
+    let obj = {choiceId: $('.profileOnView img').attr('data-id')};
+    $.ajax({
+      type: 'POST',
+      url: '/like',
+      data: obj,
+      success: matchChecker,
+      error: {
+        500: function(xhr, textStatus, errorThrown) {
+          alert(errorThrown)
+        }
+      }
+    });
+  }
+
+  function dislike() {
+    let obj = {choiceId: $('.profileOnView img').attr('data-id')};
+    $.ajax({
+      type: 'POST',
+      url: '/dislike',
+      data: obj,
+      success: fetchNext
+    });
   }
 
   //on-click profile on view ajax
@@ -157,7 +208,6 @@ $(document).ready(function () {
     evt.stopPropagation();
     $('#green').css('display', 'block')
     setTimeout(like, 300)
-
   });
 
   $('#dislike').on("click", function(evt) {

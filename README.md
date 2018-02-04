@@ -1,7 +1,7 @@
 # Friend Finder
 
 Not yet deployed to Heroku, but available for local download and configuration.
-The apps missions is to serve as a possible online solution to companies like Tinder and Bumble.
+The application's mission is to serve as a possible online solution to companies like Tinder and Bumble.
 
 ### App Technologies and Features
 
@@ -12,6 +12,7 @@ The apps missions is to serve as a possible online solution to companies like Ti
 ##### * JQuery UI Integration
 ##### * AWS S3 Integration
 ##### * SQL and Sequelize Database Integration
+##### * OAuth Account Creation (Passport.js)
 
 
 ##### * Drag and Drop Capabilities

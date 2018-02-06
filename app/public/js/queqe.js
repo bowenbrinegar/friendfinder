@@ -32,33 +32,6 @@ $(document).ready(function () {
     }
   }
 
-  // function renderQueqe (response) {
-  //   let html = `<img class='imgQueqe' src=${response.url} data-id=${response.id}>`
-  //   $('#queqe').prepend(html)
-  // };
-
-  // function renderOne (response) {
-  //   let html = `<img class='imgQueqe' style='display:block' src=${response.url} data-id=${response.id}>`
-  //   $('#queqe').append(html)
-  // };
-
-  // function renderOnView (res) {
-  //   let $img = $('.profileOnView img');
-  //   $img.removeAttr('src');
-  //   if (res === 'n/a') {
-  //     $img.attr('src', './assets/imgs/profile-female.jpg');
-  //     turn = false;
-  //     return
-  //   }
-  //   $img.attr('src', res.url);
-  //   $img.attr('data-id', res.id)
-  //   turn = true
-  //   if (count > 0) {
-  //     fetchOne();
-  //   }
-  //   count++
-  // }
-
   function alertFunc(res) {
     alert('match!');
     fetchNext()

@@ -1,6 +1,5 @@
 $(document).ready(() => {
 
-
 $('.profileOnView').on('click', 'img', function() {
   let id = $(this).attr('data-id')
   fetchProfile(id)
@@ -34,7 +33,6 @@ const distribute = (res) => {
   for (let i=0; i < res.Images.length; i++) {
     awsImg(res.Images[i].path)
   }
-  console.log(res)
 }
 
 const awsImg = (path) => {
@@ -48,7 +46,6 @@ const awsImg = (path) => {
 const renderOnImgs = (res) => {
   let html = `<img id='onImgsItem' src=${res}>`
   $('#onImgs').append(html)
-  console.log(res)
 }
 
 
